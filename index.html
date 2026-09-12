@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Diseño Digital | Portafolio</title>
+
+  <meta name="description" content="Diseño web, diseño gráfico y contenido digital para negocios.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #08080d;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 18px 7%;
+
+      background: rgba(8, 8, 13, 0.82);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #8b5cf6;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #aaa;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      padding: 120px 7% 70px;
+
+      background:
+        radial-gradient(circle at 50% 20%, rgba(124,58,237,0.22), transparent 35%),
+        #08080d;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+
+      padding: 8px 16px;
+      margin-bottom: 25px;
+
+      border: 1px solid rgba(139,92,246,0.35);
+      border-radius: 50px;
+
+      color: #c4b5fd;
+      background: rgba(139,92,246,0.08);
+
+      font-size: 13px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #8b5cf6, #c084fc);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+
+      color: #a1a1aa;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 23px;
+      border-radius: 10px;
+
+      font-weight: 700;
+      font-size: 14px;
+
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #8b5cf6;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(139,92,246,0.3);
+    }
+
+    .btn-secondary {
+      border: 1px solid #333;
+      color: #ddd;
+    }
+
+    .btn-secondary:hover {
+      border-color: #666;
+      transform: translateY(-3px);
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 100px 7%;
+    }
+
+    .section-title {
+      max-width: 700px;
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: #a78bfa;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 5vw, 50px);
+      margin-top: 10px;
+      line-height: 1.1;
+    }
+
+    .section-title p {
+      color: #888;
+      margin-top: 15px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #0b0b11;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 30px;
+
+      background: #101017;
+      border: 1px solid #1d1d27;
+      border-radius: 18px;
+
+      transition: 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-7px);
+      border-color: rgba(139,92,246,0.5);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 12px;
+
+      background: rgba(139,92,246,0.12);
+      color: #a78bfa;
+
+      font-size: 22px;
+
+      margin-bottom: 20px;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .service p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      overflow: hidden;
+
+      background: #101017;
+      border: 1px solid #1d1d27;
+      border-radius: 18px;
+
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-7px);
+      border-color: rgba(139,92,246,0.45);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 230px;
+
+      overflow: hidden;
+
+      background: #171720;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: 0.5s;
+
+      /* NUEVO */
+      cursor: zoom-in;
+    }
+
+    .project:hover .project-image img {
+      transform: scale(1.06);
+    }
+
+    .project-content {
+      padding: 22px;
+    }
+
+    .project-category {
+      color: #a78bfa;
+      font-size: 11px;
+
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+
+      font-weight: 700;
+    }
+
+    .project h3 {
+      font-size: 21px;
+      margin: 8px 0;
+    }
+
+    .project p {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .project-btn {
+      display: inline-block;
+
+      padding: 10px 16px;
+
+      background: #8b5cf6;
+      color: white;
+
+      border-radius: 8px;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      transition: 0.3s;
+    }
+
+    .project-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(139,92,246,0.25);
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      display: none;
+
+      position: fixed;
+      inset: 0;
+
+      z-index: 9999;
+
+      background: rgba(0, 0, 0, 0.92);
+
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px;
+
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 88vh;
+
+      width: auto;
+      height: auto;
+
+      object-fit: contain;
+
+      border-radius: 12px;
+
+      box-shadow: 0 20px 80px rgba(0,0,0,0.7);
+
+      animation: lightboxZoom 0.25s ease;
+    }
+
+    .lightbox-close {
+      position: absolute;
+
+      top: 20px;
+      right: 25px;
+
+      width: 45px;
+      height: 45px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+
+      color: white;
+
+      font-size: 28px;
+      line-height: 1;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(139,92,246,0.8);
+      transform: scale(1.08);
+    }
+
+    @keyframes lightboxZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.88);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* ENGLISH */
+
+    .english-section {
+      background: #0b0b11;
+    }
+
+    .english-card {
+      position: relative;
+      overflow: hidden;
+
+      padding: 45px;
+
+      border-radius: 24px;
+
+      background:
+        linear-gradient(135deg, rgba(139,92,246,0.15), rgba(255,255,255,0.02));
+
+      border: 1px solid #292934;
+    }
+
+    .english-card::after {
+      content: "ENGLISH";
+
+      position: absolute;
+      right: -20px;
+      bottom: -30px;
+
+      font-size: 90px;
+      font-weight: 900;
+
+      color: rgba(255,255,255,0.025);
+
+      pointer-events: none;
+    }
+
+    .english-card h2 {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .english-card h2 span {
+      color: #a78bfa;
+    }
+
+    .english-card p {
+      max-width: 650px;
+      color: #999;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 800px;
+      margin: auto;
+
+      padding: 55px 30px;
+
+      border-radius: 25px;
+
+      background:
+        radial-gradient(circle at top, rgba(139,92,246,0.18), transparent 55%),
+        #101017;
+
+      border: 1px solid #262631;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(32px, 5vw, 55px);
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #888;
+      max-width: 550px;
+      margin: auto;
+    }
+
+    .contact-buttons {
+      margin-top: 30px;
+
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 7%;
+
+      border-top: 1px solid #1c1c25;
+
+      text-align: center;
+
+      color: #666;
+      font-size: 13px;
+    }
+
+    /* ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      nav {
+        padding: 16px 5%;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      section {
+        padding: 75px 5%;
+      }
+
+      .hero {
+        padding: 120px 5% 70px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .services-grid,
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .english-card {
+        padding: 30px 25px;
+      }
+
+      .english-card h2 {
+        font-size: 32px;
+      }
+
+      .project-image {
+        height: 220px;
+      }
+
+      /* LIGHTBOX EN CELULAR */
+
+      .lightbox {
+        padding: 15px;
+      }
+
+      .lightbox img {
+        max-width: 96vw;
+        max-height: 82vh;
+      }
+
+      .lightbox-close {
+        top: 12px;
+        right: 12px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+      Tu<span>Diseño</span>
+    </div>
+
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#portfolio">Portafolio</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="inicio">
+
+    <div class="hero-content reveal">
+
+      <div class="badge">
+        Diseño digital para negocios
+      </div>
+
+      <h1>
+        Diseño que hace<br>
+        <span>crecer tu negocio.</span>
+      </h1>
+
+      <p>
+        Creo páginas web, diseños digitales y contenido visual
+        para ayudar a negocios y emprendedores a tener una
+        presencia más profesional en internet.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#portfolio" class="btn btn-primary">
+          Ver mi trabajo
+        </a>
+
+        <a href="#contacto" class="btn btn-secondary">
+          Contactarme
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section class="services" id="servicios">
+
+    <div class="section-title reveal">
+
+      <small>Lo que hago</small>
+
+      <h2>
+        Soluciones digitales
+        para tu negocio.
+      </h2>
+
+      <p>
+        Diseño soluciones sencillas, modernas y pensadas
+        para que tu negocio se vea más profesional.
+      </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+      <div class="service reveal">
+
+        <div class="service-icon">
+          🌐
+        </div>
+
+        <h3>Páginas web</h3>
+
+        <p>
+          Páginas modernas y adaptadas a celular
+          para negocios y proyectos.
+        </p>
+
+      </div>
+
+
+      <div class="service reveal">
+
+        <div class="service-icon">
+          🎨
+        </div>
+
+        <h3>Diseño gráfico</h3>
+
+        <p>
+          Posts, promociones, anuncios y diseños
+          para redes sociales.
+        </p>
+
+      </div>
+
+
+      <div class="service reveal">
+
+        <div class="service-icon">
+          📱
+        </div>
+
+        <h3>Contenido digital</h3>
+
+        <p>
+          Diseños visuales para ayudar a las marcas
+          a mejorar su presencia online.
+        </p>
+
+      </div>
+
+
+      <div class="service reveal">
+
+        <div class="service-icon">
+          💡
+        </div>
+
+        <h3>Ideas digitales</h3>
+
+        <p>
+          Desarrollo ideas y soluciones digitales
+          adaptadas a cada proyecto.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PORTFOLIO -->
+
+  <section id="portfolio">
+
+    <div class="section-title reveal">
+
+      <small>Portafolio</small>
+
+      <h2>
+        Algunos de mis trabajos.
+      </h2>
+
+      <p>
+        Una muestra de proyectos y diseños realizados
+        para diferentes tipos de negocios.
+      </p>
+
+    </div>
+
+
+    <div class="portfolio-grid">
+
+
+      <!-- BARBERÍA -->
+
+      <div class="project reveal">
+
+        <div class="project-image">
+
+          <img
+            src="img/barberia.jpg"
+            alt="Diseño para barbería"
+          >
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="project-category">
+            Diseño digital
+          </span>
+
+          <h3>Barbería</h3>
+
+          <p>
+            Diseño visual pensado para mejorar
+            la presentación de una barbería.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- RESTAURANTE -->
+
+      <div class="project reveal">
+
+        <div class="project-image">
+
+          <img
+            src="img/restaurante.jpg"
+            alt="Diseño para restaurante"
+          >
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="project-category">
+            Diseño digital
+          </span>
+
+          <h3>Restaurante</h3>
+
+          <p>
+            Diseño promocional para mostrar
+            productos y atraer clientes.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- ROPA -->
+
+      <div class="project reveal">
+
+        <div class="project-image">
+
+          <img
+            src="img/ropa.jpg"
+            alt="Diseño para tienda de ropa"
+          >
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="project-category">
+            Redes sociales
+          </span>
+
+          <h3>Tienda de ropa</h3>
+
+          <p>
+            Diseño pensado para presentar productos
+            de una forma moderna y atractiva.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- LUZ Y CAMINO -->
+
+      <div class="project reveal">
+
+        <div class="project-image">
+
+          <img
+            src="img/luz.jpg"
+            alt="Luz y Camino"
+          >
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="project-category">
+            Aplicación web
+          </span>
+
+          <h3>Luz y Camino</h3>
+
+          <p>
+            Aplicación web enfocada en contenido,
+            oración y reflexión.
+          </p>
+
+          <a
+            href="https://luz-y-camino.netlify.app/"
+            target="_blank"
+            class="project-btn"
+          >
+            Ver proyecto →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- INVITACIONES -->
+
+      <div class="project reveal">
+
+        <div class="project-image">
+
+          <img
+            src="img/invitaciones.jpg"
+            alt="Invitaciones digitales"
+          >
+
+        </div>
+
+        <div class="project-content">
+
+          <span class="project-category">
+            Diseño digital
+          </span>
+
+          <h3>Invitaciones digitales</h3>
+
+          <p>
+            Invitaciones digitales diseñadas para
+            diferentes tipos de eventos.
+          </p>
+
+          <a
+            href="https://invita-digitales.netlify.app/"
+            target="_blank"
+            class="project-btn"
+          >
+            Ver proyecto →
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ENGLISH -->
+
+  <section class="english-section">
+
+    <div class="english-card reveal">
+
+      <h2>
+        Diseño también en <span>English.</span>
+      </h2>
+
+      <p>
+        Puedo crear diseños y páginas con contenido
+        en español o inglés, adaptados al estilo
+        y necesidades de cada proyecto.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contacto">
+
+    <div class="contact-box reveal">
+
+      <h2>
+        ¿Tienes un proyecto?
+      </h2>
+
+      <p>
+        Cuéntame qué necesitas y podemos crear
+        algo profesional para tu negocio.
+      </p>
+
+
+      <div class="contact-buttons">
+
+        <a
+          href="https://wa.me/5515057594"
+          target="_blank"
+          class="btn btn-primary"
+        >
+          💬 Hablar por WhatsApp
+        </a>
+
+        <a
+          href="#portfolio"
+          class="btn btn-secondary"
+        >
+          Ver portafolio
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 TuDiseño · Diseño digital y páginas web
+
+  </footer>
+
+
+  <!-- LIGHTBOX -->
+
+  <div class="lightbox" id="lightbox">
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      aria-label="Cerrar imagen"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt="Imagen ampliada"
+    >
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    /* ANIMACIONES */
+
+    const elements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+    elements.forEach((element) => {
+
+      observer.observe(element);
+
+    });
+
+
+    /* LIGHTBOX */
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    const portfolioImages = document.querySelectorAll(
+      ".project-image img"
+    );
+
+
+    portfolioImages.forEach((image) => {
+
+      image.addEventListener("click", () => {
+
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+
+        lightbox.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+      });
+
+    });
+
+
+    /* CERRAR CON X */
+
+    lightboxClose.addEventListener("click", () => {
+
+      lightbox.classList.remove("active");
+
+      document.body.style.overflow = "";
+
+    });
+
+
+    /* CERRAR TOCANDO AFUERA */
+
+    lightbox.addEventListener("click", (event) => {
+
+      if (event.target === lightbox) {
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+      }
+
+    });
+
+
+    /* CERRAR CON ESC */
+
+    document.addEventListener("keydown", (event) => {
+
+      if (event.key === "Escape") {
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
