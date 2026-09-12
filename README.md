@@ -1067,7 +1067,7 @@ nav a:hover {
             <!-- CAMBIA EL NÚMERO POR EL DE TU AMIGO -->
 
             <a
-                href="https://wa.me/52XXXXXXXXXX"
+                href="https://wa.me/527121081755"
                 target="_blank"
                 class="btn btn-gold"
             >
